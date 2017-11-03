@@ -9,8 +9,12 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MailSender {
+
+    protected static final Logger LOGGER = LoggerFactory.getLogger(MailSender.class);
 
     private class SMTPAuthenticator extends javax.mail.Authenticator {
 
@@ -54,7 +58,7 @@ public class MailSender {
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress("mai.pham.intern@ntq-solution.com.vn"));
             Transport.send(msg);
         } catch (MessagingException e) {
-            
+            LOGGER.error("Deliver email exception", e);
         }
     }
 }
