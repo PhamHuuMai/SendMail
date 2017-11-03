@@ -1,4 +1,9 @@
-package com.mycompany.sendmail;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package vn.com.ntqsolution.server.worker.email;
 
 import java.util.Properties;
 import javax.mail.Authenticator;
@@ -11,10 +16,16 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-public class MailSender {
+/**
+ *
+ * @author Rua
+ */
+@Component
+public class EmailDeliver {
 
-    protected static final Logger LOGGER = LoggerFactory.getLogger(MailSender.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(EmailDeliver.class);
 
     private class SMTPAuthenticator extends javax.mail.Authenticator {
 
@@ -49,12 +60,12 @@ public class MailSender {
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.port", 465);
 
-            Authenticator auth = new SMTPAuthenticator("maipham6996@gmail.com", "mothaibabon");
+            Authenticator auth = new SMTPAuthenticator("maipham6996@gmail.com","mothaibabon");
             Session session = Session.getInstance(props, auth);
             session.setDebug(true);
             MimeMessage msg = new MimeMessage(session);
-            msg.setText("dddddddddddd", "UTF-8");
-            msg.setSubject("ssssssssssss", "UTF-8");
+            msg.setText("sssssss", "UTF-8");
+            msg.setSubject("sssssssss", "UTF-8");
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress("mai.pham.intern@ntq-solution.com.vn"));
             Transport.send(msg);
         } catch (MessagingException e) {

@@ -1,2 +1,26 @@
+server:
+  port: 8888
+  
 logging:
   file: /home/log/usm-service.log
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: ums-service
+    
+  data:
+    mongodb:
+      host: 202.221.140.212
+      port: 27017
+      database: fortune_teller_ums_db
+  redis:
+    host: 202.221.140.212
+    port: 6379
+    password: 123456123
