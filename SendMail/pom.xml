@@ -25,11 +25,16 @@
                 <artifactId>SendMail</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <configuration>
-                    <mainClass>com.mycompany.sendmail</mainClass>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.bank.App</mainClass>
+                        </manifest>
+                    </archive>
+<!--                    <mainClass>com.mycompany.sendmail</mainClass>
                     <arguments>
                         <argument>foo</argument>
                         <argument>bar</argument>
-                    </arguments>
+                    </arguments>-->
                 </configuration>
             </plugin>
         </plugins>
