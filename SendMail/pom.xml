@@ -27,7 +27,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.bank.App</mainClass>
+                            <mainClass>com.mycompany.sendmail.Main</mainClass>
                         </manifest>
                     </archive>
 <!--                    <mainClass>com.mycompany.sendmail</mainClass>
