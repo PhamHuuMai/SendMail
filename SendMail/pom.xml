@@ -76,11 +76,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>vn.com.ntqsolution</groupId>
-            <artifactId>fortune-teller-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!-- Spring boot mail -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
