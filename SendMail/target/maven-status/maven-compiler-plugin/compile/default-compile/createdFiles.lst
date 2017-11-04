@@ -1,0 +1,4 @@
+vn\com\ntqsolution\server\controller\FortuneTellerVerifyCodeController.class
+vn\com\ntqsolution\UserManagementApplication.class
+vn\com\ntqsolution\server\worker\email\EmailDeliver$SMTPAuthenticator.class
+vn\com\ntqsolution\server\worker\email\EmailDeliver.class

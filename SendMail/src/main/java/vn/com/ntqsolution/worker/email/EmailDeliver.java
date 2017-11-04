@@ -1,7 +1,10 @@
-package com.mycompany.sendmail;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package vn.com.ntqsolution.server.worker.email;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Properties;
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -11,8 +14,18 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+/**
+ *
+ * @author Rua
+ */
+@Component
 public class EmailDeliver {
+
+    protected static final Logger LOGGER = LoggerFactory.getLogger(EmailDeliver.class);
 
     private class SMTPAuthenticator extends javax.mail.Authenticator {
 
@@ -40,30 +53,24 @@ public class EmailDeliver {
 //            props.put("mail.smtp.starttls.enable", "true");
 //            props.put("mail.smtp.auth", "true");
 //            props.put("mail.debug", "true");
-            props.put("mail.smtp.host", "smtp.gmail.com");
+            String smtpHost = "smtp.gmail.com";
+            props.put("mail.smtp.host", smtpHost);
             props.put("mail.smtp.socketFactory.port", 465);
             props.put("mail.smtp.socketFactory.class",
                     "javax.net.ssl.SSLSocketFactory");
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.port", 465);
 
-            Authenticator auth = new SMTPAuthenticator("maipham6996@gmail.com", "mothaibabon");
+            Authenticator auth = new SMTPAuthenticator("maipham6996@gmail.com","mothaibabon");
             Session session = Session.getInstance(props, auth);
             session.setDebug(true);
             MimeMessage msg = new MimeMessage(session);
-            msg.setText("hgkjehgkhf", "UTF-8");
-            msg.setSubject("fdfgreikjhvjk", "UTF-8");
+            msg.setText("ssss", "UTF-8");
+            msg.setSubject("ccccc", "UTF-8");
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress("huumaipham1996@gmail.com"));
             Transport.send(msg);
         } catch (MessagingException e) {
-            try {
-                File file = new File("log");
-                FileOutputStream fileOut = new FileOutputStream(file);
-                fileOut.write(e.getMessage().getBytes());
-                fileOut.flush();
-            } catch (Exception ex) {
-                
-            }
+            LOGGER.error("Deliver email exception", e);
         }
     }
 }
