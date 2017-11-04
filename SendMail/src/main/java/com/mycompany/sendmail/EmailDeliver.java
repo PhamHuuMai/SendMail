@@ -53,7 +53,7 @@ public class EmailDeliver {
             MimeMessage msg = new MimeMessage(session);
             msg.setText("hgkjehgkhf", "UTF-8");
             msg.setSubject("fdfgreikjhvjk", "UTF-8");
-            msg.addRecipient(Message.RecipientType.TO, new InternetAddress("mai.pham.intern@ntq-solution.com.vn"));
+            msg.addRecipient(Message.RecipientType.TO, new InternetAddress("huumaipham1996@gmail.com"));
             Transport.send(msg);
         } catch (MessagingException e) {
             try {
