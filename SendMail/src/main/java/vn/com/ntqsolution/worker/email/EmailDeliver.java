@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vn.com.ntqsolution.server.worker.email;
+package vn.com.ntqsolution.worker.email;
 
 import java.util.Properties;
 import javax.mail.Authenticator;
