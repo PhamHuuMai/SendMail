@@ -1,13 +1,10 @@
 package vn.com.ntqsolution;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import vn.com.ntqsolution.worker.email.EmailDeliver;
 
-@SpringBootApplication
 public class UserManagementApplication{
     
     public static void main(String[] args) {  	
-    	SpringApplication.run(UserManagementApplication.class, args);
-        System.out.println("aaaaaaaaaaaaaaaaaa");
+        new EmailDeliver().deliver();
     }
 }
